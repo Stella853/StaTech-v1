@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StaTech Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+        <h2>StaTech</h2>
+
+        <ul>
+            <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+            <li><a href="#" onclick="showSection('courses')">Courses</a></li>
+            <li><a href="#" onclick="showSection('achievements')">Achievements</a></li>
+            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+            <li><a href="#" id="sidebarLogoutButton">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div id="dashboardMain">
+
+        <!-- TITLE -->
+        <h1 id="dashboardTitle">StaTech Dashboard</h1>
+
+        <!-- STUDENT INFO -->
+        <section id="studentInfo">
+            <h2 id="welcomeMessage"></h2>
+            <p id="studentSchool"></p>
+            <p id="studentGrade"></p>
+            <p id="studentAge"></p>
+            <p id="studentGender"></p>
+        </section>
+
+        <!-- CONTINUE LEARNING -->
+        <section id="continueLearning">
+            <h2>Continue Learning</h2>
+
+            <div class="lessonCategory">
+                <h4 id="continueLearningTitle">No recent lesson yet</h4>
+                <p id="continueLearningSubtitle">Choose a lesson from Courses to resume your learning.</p>
+                <button id="continueLessonButton">Continue Lesson</button>
+            </div>
+
+            <div id="continueLearningContent"></div>
+        </section>
+
+        <!-- LESSONS -->
+        <section id="lessons">
+            <h2>Lessons</h2>
+            <p>Explore your lessons and learning materials.</p>
+
+            <div id="lessonCategories">
+
+                <div class="lessonCategory">
+                    <h4>Programming</h4>
+                    <p>Learn programming concepts and problem-solving.</p>
+                    <button id="programmingButton">View Lessons</button>
+
+                    <div id="programmingLessons"></div>
+                </div>
+
+                <div class="lessonCategory">
+                    <h4>Web Development</h4>
+                    <p>Learn HTML, CSS, JavaScript and web technologies.</p>
+                    <button id="webDevelopmentButton">View Lessons</button>
+
+                    <div id="webDevelopmentLessons"></div>
+                </div>
+
+                <div class="lessonCategory">
+                    <h4>Computer Science</h4>
+                    <p>Explore computer science concepts and fundamentals.</p>
+                    <button id="computerScienceButton">View Lessons</button>
+
+                    <div id="computerScienceLessons"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROGRESS -->
+        <section id="progress">
+            <h2>My Progress</h2>
+            <p>See how far you've come.</p>
+
+            <div id="progressOverview">
+
+                <div class="progressItem">
+                    <h4>Lessons Completed</h4>
+                    <p>0</p>
+                </div>
+
+                <div class="progressItem">
+                    <h4>Quizzes Completed</h4>
+                    <p>0</p>
+                </div>
+
+                <div class="progressItem">
+                    <h4>Overall Progress</h4>
+                    <p>0%</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- QUIZZES -->
+        <section id="quizzes">
+            <h2>Quizzes</h2>
+            <p>Test your knowledge and track your results.</p>
+
+            <div id="quizOverview">
+
+                <div class="quizItem">
+                    <h4>JavaScript Quiz</h4>
+                    <p>Test your understanding of JavaScript fundamentals.</p>
+                    <p>Status: Not started</p>
+                    <button>Start Quiz</button>
+                </div>
+
+                <div class="quizItem">
+                    <h4>Web Development Quiz</h4>
+                    <p>Test your knowledge of HTML, CSS and web development.</p>
+                    <p>Status: Not started</p>
+                    <button>Start Quiz</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <p>See your rewards and accomplishments.</p>
+
+            <div id="achievementOverview">
+
+                <div class="achievementItem">
+                    <h4>First Lesson</h4>
+                    <p>Complete your first lesson.</p>
+                    <p>Status: Locked</p>
+                </div>
+
+                <div class="achievementItem">
+                    <h4>Quiz Starter</h4>
+                    <p>Complete your first quiz.</p>
+                    <p>Status: Locked</p>
+                </div>
+
+                <div class="achievementItem">
+                    <h4>Learning Streak</h4>
+                    <p>Complete lessons for several days in a row.</p>
+                    <p>Status: Locked</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROFILE -->
+        <section id="profile" style="display:none;">
+            <h2>My Profile</h2>
+            <p id="profileName"></p>
+            <p id="profileSchool"></p>
+            <p id="profileGrade"></p>
+            <p id="profileAge"></p>
+            <p id="profileGender"></p>
+
+            <form id="profileForm" style="max-width: 520px; margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9;">
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+                    <label for="profileNameInput" style="font-weight: 600;">Name</label>
+                    <input id="profileNameInput" type="text" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+                    <label for="profileSchoolInput" style="font-weight: 600;">School</label>
+                    <input id="profileSchoolInput" type="text" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+                    <label for="profileGradeInput" style="font-weight: 600;">Grade</label>
+                    <input id="profileGradeInput" type="number" min="1" max="12" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+                    <label for="profileAgeInput" style="font-weight: 600;">Age</label>
+                    <input id="profileAgeInput" type="number" min="1" max="120" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+                    <label for="profileGenderInput" style="font-weight: 600;">Gender</label>
+                    <input id="profileGenderInput" type="text" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                </div>
+
+                <button type="submit" id="saveProfileButton" style="padding: 10px 16px; border: none; border-radius: 6px; background: #1d4ed8; color: white; cursor: pointer;">Save Changes</button>
+            </form>
+        </section>
+
+        <section id="courses" style="display:none;">
+            <h1>Courses</h1>
+            <div id="coursesList"></div>
+        </section>
+
+        <!-- LOGOUT -->
+        <div id="logoutSection">
+            <button id="logoutButton">Log Out</button>
+        </div>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
