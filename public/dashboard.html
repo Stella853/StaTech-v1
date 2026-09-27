@@ -8,79 +8,127 @@
 </head>
 
 <body>
+    <a class="skipLink" href="#dashboardMain">Skip to main content</a>
 
-    <!-- SIDEBAR -->
-    <aside id="sidebar">
-        <h2>StaTech</h2>
-
-        <ul>
-            <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
-            <li><a href="#" onclick="showSection('courses')">Courses</a></li>
-            <li><a href="#" onclick="showSection('achievements')">Achievements</a></li>
-            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
-            <li><a href="#" id="sidebarLogoutButton">Logout</a></li>
-        </ul>
-    </aside>
+    <div id="dashboardNavigation"></div>
 
     <!-- MAIN DASHBOARD CONTENT -->
-    <div id="dashboardMain">
+    <div id="dashboardMain" role="main" tabindex="-1">
 
         <!-- TITLE -->
         <h1 id="dashboardTitle">StaTech Dashboard</h1>
+        <p id="dashboardLoadStatus" role="status" hidden></p>
 
-        <!-- STUDENT INFO -->
-        <section id="studentInfo">
-            <h2 id="welcomeMessage"></h2>
-            <p id="studentSchool"></p>
-            <p id="studentGrade"></p>
-            <p id="studentAge"></p>
-            <p id="studentGender"></p>
-        </section>
+        <section id="studentInfo" class="dashboardTopSummary">
+            <div class="studentInfoHeader">
+                <div>
+                    <p class="readerEyebrow">Student summary</p>
+                    <h2 id="welcomeMessage"></h2>
+                </div>
+                <span class="studentBadge">Learning dashboard</span>
+            </div>
 
-        <!-- CONTINUE LEARNING -->
-        <section id="continueLearning">
-            <h2>Continue Learning</h2>
+            <div class="studentMeta">
+                <p id="studentSchool"></p>
+                <p id="studentGrade"></p>
+                <p id="studentAge"></p>
+                <p id="studentGender"></p>
+            </div>
 
-            <div class="lessonCategory">
-                <h4 id="continueLearningTitle">No recent lesson yet</h4>
-                <p id="continueLearningSubtitle">Choose a lesson from Courses to resume your learning.</p>
+            <div class="summaryContinueBlock">
+                <div>
+                    <p class="summaryLabel">Continue learning</p>
+                    <h3 id="continueLearningTitle">No recent lesson yet</h3>
+                    <p id="continueLearningSubtitle">Choose a lesson from Courses to resume your learning.</p>
+                </div>
                 <button id="continueLessonButton">Continue Lesson</button>
             </div>
 
             <div id="continueLearningContent"></div>
         </section>
 
+        <section id="learningHighlights" aria-label="Learning highlights">
+            <div class="quickStat">
+                <span class="quickStatLabel">Next up</span>
+                <strong id="nextLessonFocus">Choose a lesson</strong>
+            </div>
+            <div class="quickStat">
+                <span class="quickStatLabel">Lessons</span>
+                <strong id="quickLessonsValue">0/0</strong>
+            </div>
+            <div class="quickStat">
+                <span class="quickStatLabel">Focus</span>
+                <strong id="quickFocusValue">Start strong</strong>
+            </div>
+        </section>
+
         <!-- LESSONS -->
         <section id="lessons">
             <h2>Lessons</h2>
-            <p>Explore your lessons and learning materials.</p>
+            <p>Choose a course first, then choose a lesson.</p>
 
-            <div id="lessonCategories">
-
-                <div class="lessonCategory">
-                    <h4>Programming</h4>
-                    <p>Learn programming concepts and problem-solving.</p>
-                    <button id="programmingButton">View Lessons</button>
-
-                    <div id="programmingLessons"></div>
+            <div id="courseRoadmap">
+                <div class="roadmapIntro">
+                    <p class="readerEyebrow">Your learning path</p>
+                    <h3>From curious learner to confident creator</h3>
+                    <p>Follow the path in order, or choose the subject that matches your curiosity today.</p>
                 </div>
 
-                <div class="lessonCategory">
-                    <h4>Web Development</h4>
-                    <p>Learn HTML, CSS, JavaScript and web technologies.</p>
-                    <button id="webDevelopmentButton">View Lessons</button>
+                <div class="roadmapSteps">
+                    <article class="roadmapStep">
+                        <span class="roadmapNumber">1</span>
+                        <div>
+                            <h4>Start here: Computer Science</h4>
+                            <p>Understand computers, information, algorithms, safety, and how technology can solve community problems.</p>
+                            <button class="roadmapButton" data-roadmap-subject="Computer Science" type="button" aria-expanded="false" aria-controls="activeCourseLessons">View lessons</button>
+                        </div>
+                    </article>
 
-                    <div id="webDevelopmentLessons"></div>
+                    <article class="roadmapStep">
+                        <span class="roadmapNumber">2</span>
+                        <div>
+                            <h4>Learn to code: Programming</h4>
+                            <p>Practise variables, decisions, loops, functions, debugging, and the thinking habits programmers use.</p>
+                            <button class="roadmapButton" data-roadmap-subject="Programming" type="button" aria-expanded="false" aria-controls="activeCourseLessons">View lessons</button>
+                        </div>
+                    </article>
+
+                    <article class="roadmapStep">
+                        <span class="roadmapNumber">3</span>
+                        <div>
+                            <h4>Build for the web: Web Development</h4>
+                            <p>Turn ideas into accessible webpages with HTML, CSS, JavaScript, responsive design, and safety.</p>
+                            <button class="roadmapButton" data-roadmap-subject="Web Development" type="button" aria-expanded="false" aria-controls="activeCourseLessons">View lessons</button>
+                        </div>
+                    </article>
+
+                    <article class="roadmapStep">
+                        <span class="roadmapNumber">4</span>
+                        <div>
+                            <h4>Create with Python</h4>
+                            <p>Use Python to solve practical problems involving data, calculations, automation, and community projects.</p>
+                            <button class="roadmapButton" data-roadmap-subject="Python" type="button" aria-expanded="false" aria-controls="activeCourseLessons">View lessons</button>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="lessonCategory">
-                    <h4>Computer Science</h4>
-                    <p>Explore computer science concepts and fundamentals.</p>
-                    <button id="computerScienceButton">View Lessons</button>
+                <section id="activeCourseLessons" class="activeCourseLessons" aria-labelledby="activeCourseTitle" hidden>
+                    <h4 id="activeCourseTitle">Course lessons</h4>
+                    <div id="activeCourseLessonList" class="roadmapLessonList" aria-live="polite"></div>
+                </section>
+            </div>
 
-                    <div id="computerScienceLessons"></div>
+            <div id="lessonReader" aria-live="polite">
+                <div id="lessonReaderHeader">
+                    <div>
+                        <p class="readerEyebrow">Now learning</p>
+                        <h3 id="lessonReaderTitle">Choose a lesson to begin</h3>
+                    </div>
+                    <button id="closeLessonReader" type="button">Close lesson</button>
                 </div>
-
+                <div id="lessonReaderContent">
+                    <p>Select View Lessons under a subject, then choose Start Lesson.</p>
+                </div>
             </div>
         </section>
 
@@ -93,41 +141,12 @@
 
                 <div class="progressItem">
                     <h4>Lessons Completed</h4>
-                    <p>0</p>
-                </div>
-
-                <div class="progressItem">
-                    <h4>Quizzes Completed</h4>
-                    <p>0</p>
+                    <p id="lessonsCompletedCount">0</p>
                 </div>
 
                 <div class="progressItem">
                     <h4>Overall Progress</h4>
-                    <p>0%</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- QUIZZES -->
-        <section id="quizzes">
-            <h2>Quizzes</h2>
-            <p>Test your knowledge and track your results.</p>
-
-            <div id="quizOverview">
-
-                <div class="quizItem">
-                    <h4>JavaScript Quiz</h4>
-                    <p>Test your understanding of JavaScript fundamentals.</p>
-                    <p>Status: Not started</p>
-                    <button>Start Quiz</button>
-                </div>
-
-                <div class="quizItem">
-                    <h4>Web Development Quiz</h4>
-                    <p>Test your knowledge of HTML, CSS and web development.</p>
-                    <p>Status: Not started</p>
-                    <button>Start Quiz</button>
+                    <p id="overallProgressCount">0%</p>
                 </div>
 
             </div>
@@ -138,27 +157,7 @@
             <h2>Achievements</h2>
             <p>See your rewards and accomplishments.</p>
 
-            <div id="achievementOverview">
-
-                <div class="achievementItem">
-                    <h4>First Lesson</h4>
-                    <p>Complete your first lesson.</p>
-                    <p>Status: Locked</p>
-                </div>
-
-                <div class="achievementItem">
-                    <h4>Quiz Starter</h4>
-                    <p>Complete your first quiz.</p>
-                    <p>Status: Locked</p>
-                </div>
-
-                <div class="achievementItem">
-                    <h4>Learning Streak</h4>
-                    <p>Complete lessons for several days in a row.</p>
-                    <p>Status: Locked</p>
-                </div>
-
-            </div>
+            <div id="achievementOverview"></div>
         </section>
 
         <!-- PROFILE -->
@@ -201,7 +200,7 @@
         </section>
 
         <section id="courses" style="display:none;">
-            <h1>Courses</h1>
+            <h2>Courses</h2>
             <div id="coursesList"></div>
         </section>
 
@@ -210,9 +209,19 @@
             <button id="logoutButton">Log Out</button>
         </div>
 
+        <footer class="siteFooter">
+            <div class="footerBrand">
+                <img src="statech-logo.svg" alt="">
+                <strong>StaTech</strong>
+            </div>
+            <p>Practical technology learning for curious girls.</p>
+            <p>&copy; 2026 StaTech. All rights reserved.</p>
+        </footer>
+
     </div>
 
     <script src="dashboard.js"></script>
+    <script src="navigation.js"></script>
 
 </body>
 </html>

@@ -8,33 +8,57 @@
 </head>
 
 <body>
+    <a class="skipLink" href="#loginContainer">Skip to main content</a>
 
-    <div id="loginContainer">
+    <div id="sharedNavigation"></div>
 
-        <div id="loginCard">
+    <div id="loginContainer" role="main" tabindex="-1">
 
-            <h2>Login to StaTech</h2>
+        <div id="loginCard" class="authCard">
 
-            <form id="loginForm">
+            <a class="authBrand" href="index.html" aria-label="StaTech home">
+                <img src="statech-logo.svg" alt="">
+                <span>StaTech</span>
+            </a>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <p class="authEyebrow">Welcome back</p>
+            <h1>Login to StaTech</h1>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <form id="loginForm" class="authForm">
 
-                <button id="loginButton">Login</button>
+                <div class="fieldGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
 
+                <div class="fieldGroup">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button id="loginButton" class="authButton" type="submit">Login</button>
+                <p id="loginStatus" class="authStatus" aria-live="polite"></p>
             </form>
 
-            <p id="registerLink">
+            <p id="registerLink" class="authLink">
                 Don’t have an account? <a href="register.html">Register here</a>
             </p>
+            <p class="authLink">Teacher or mentor? <a href="mentor-register.html">Staff registration</a></p>
 
         </div>
 
     </div>
 
+    <footer class="siteFooter authFooter">
+        <div class="footerBrand">
+            <img src="statech-logo.svg" alt="">
+            <strong>StaTech</strong>
+        </div>
+        <p>Practical technology learning for curious girls.</p>
+        <p>&copy; 2026 StaTech. All rights reserved.</p>
+    </footer>
+
+    <script src="navigation.js"></script>
     <script src="login.js"></script>
 
 </body>

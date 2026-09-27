@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StaTech Mentor Area</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mentorPage">
+    <a class="skipLink" href="#mentorMain">Skip to main content</a>
+
+    <nav class="mentorNav" aria-label="Mentor navigation">
+        <a class="brand" href="index.html" aria-label="StaTech home">
+            <img src="statech-logo.svg" alt="">
+            <span>StaTech</span>
+        </a>
+        <button id="mentorLogoutButton" type="button">Log out</button>
+    </nav>
+
+    <main id="mentorMain" class="mentorMain" role="main" tabindex="-1">
+        <header class="mentorHeader">
+            <p class="sectionLabel">School support</p>
+            <h1>Learner progress</h1>
+            <p>This read-only overview shows lesson and quiz completion for learners assigned to your school.</p>
+        </header>
+
+        <section class="mentorReport" aria-labelledby="mentorReportTitle">
+            <div class="mentorReportHeader">
+                <div>
+                    <h2 id="mentorReportTitle">Learning activity</h2>
+                    <p id="mentorSchoolName">Loading school...</p>
+                </div>
+                <p id="mentorLearnerCount" class="mentorLearnerCount" aria-live="polite"></p>
+            </div>
+
+            <p id="mentorStatus" role="status" aria-live="polite"></p>
+
+            <div class="mentorTableWrap">
+                <table class="mentorTable">
+                    <caption>Learner lesson and quiz completion totals</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Learner</th>
+                            <th scope="col">Grade</th>
+                            <th scope="col">Lessons</th>
+                            <th scope="col">Quizzes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mentorLearnerRows"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="navigation.js"></script>
+    <script src="mentor.js"></script>
+</body>
+</html>

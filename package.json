@@ -1,9 +1,12 @@
 {
   "name": "statech-v1",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "servers.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node servers.js",
+    "dev": "node --watch servers.js",
+    "seed:courses": "node seedCourses.js",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",

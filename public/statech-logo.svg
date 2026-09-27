@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">StaTech mark</title>
+  <desc id="desc">A gold and teal circuit-inspired letter S</desc>
+  <rect width="64" height="64" rx="16" fill="#123c4a"/>
+  <path d="M43 18H27a8 8 0 0 0 0 16h10a8 8 0 0 1 0 16H19" fill="none" stroke="#f9c46b" stroke-linecap="round" stroke-width="7"/>
+  <path d="M43 18h8M51 18v8M19 50h-8M11 50v-8" fill="none" stroke="#75d5c5" stroke-linecap="round" stroke-width="3"/>
+  <circle cx="51" cy="18" r="3" fill="#75d5c5"/>
+  <circle cx="11" cy="50" r="3" fill="#75d5c5"/>
+</svg>

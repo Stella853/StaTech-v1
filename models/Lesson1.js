@@ -10,6 +10,12 @@ const lessonSchema = new mongoose.Schema({
 
     content: String,
 
+    quizQuestions: [{
+        question: String,
+        options: [String],
+        answer: String
+    }],
+
     order: Number
 
 });

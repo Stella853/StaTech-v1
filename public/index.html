@@ -7,38 +7,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-    <h2>StaTech</h2>
-
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#how-it-works">How StaTech Works</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-    </ul>
-    </nav>
+    <a class="skipLink" href="#mainContent">Skip to main content</a>
+    <div id="sharedNavigation"></div>
 
     <header>
-        <h1>Empowering the Next Generation of Tech Leaders</h1>
+        <div class="heroLabel">StaTech for girls aged 12-17</div>
+        <h1>Her ideas belong in the future of technology.</h1>
 
         <p>
-            Learn. Create. Build your future with technology.
+            Learn computer science, build practical skills, and create solutions for your school and community, even when technology feels far away.
         </p>
 
-        <a href="register.html" class="heroButton">Start Learning</a>
+        <div class="heroActions">
+            <a href="register.html" class="heroButton">Start learning</a>
+            <a href="#how-it-works" class="heroSecondaryButton">See how it works</a>
+        </div>
+
+        <div class="heroProof">
+            <span>36 guided lessons</span>
+            <span>4 technology pathways</span>
+            <span>Built for curious beginners</span>
+        </div>
     </header>
 
-    <main>
-
-        <section id="welcome">
-            <h2>Welcome to StaTech</h2>
-            <p>
-                Learn computer science, develop your skills,
-                and build your future with technology.
+    <aside id="supportTicker" class="supportTicker" aria-label="Support girls' learning">
+        <p class="visuallyHidden">
+            StaTech does not earn income from this page. Donations of personal care essentials, internet data, usable computers, books, pens, pencils, clothes, shoes, exercise books, phones, and other useful supplies can help girls stay in school and motivated.
+        </p>
+        <div class="supportTickerViewport" aria-hidden="true">
+            <p id="supportTickerMessage" class="supportTickerMessage">
+                StaTech does not earn income from this page. Help girls stay in school and motivated with personal care essentials, internet data, usable computers, books, pens, pencils, clothes, shoes, exercise books, phones, and other useful supplies. Every contribution is appreciated.
             </p>
+        </div>
+        <div class="supportTickerActions">
+            <button id="supportTickerToggle" class="supportTickerToggle" type="button" aria-label="Pause moving donation message" aria-pressed="false">Pause message</button>
+            <a class="supportTickerLink" href="#contact">Ask how to contribute</a>
+        </div>
+    </aside>
+
+    <main id="mainContent" tabindex="-1">
+
+        <section id="welcome" class="welcomeBlock">
+            <div>
+                <p class="sectionLabel">A place to begin</p>
+                <h2>Technology education should reach her, too.</h2>
+            </div>
+            <div class="missionSignal">
+                <span class="missionSignalLine"></span>
+                <p>StaTech gives young girls a welcoming way to understand computers, practise coding, explore science, and see themselves as creators rather than only users of technology.</p>
+            </div>
         </section>
 
         <section id="about">
@@ -71,7 +88,121 @@
 
         <section id="courses">
             <h2>Explore Courses</h2>
-            <p>Discover lessons and learning resources.</p>
+            <p>Choose a starting point and build confidence one practical lesson at a time.</p>
+            <div class="coursePreviewGrid">
+                <a class="coursePreview coursePreviewBlue" href="register.html" aria-label="Register to start Computer Science">
+                    <span class="courseNumber">01</span>
+                    <h3>Computer Science</h3>
+                    <p>Understand computers, information, algorithms, safety, and technology’s role in real life.</p>
+                    <span class="coursePreviewAction">Start learning</span>
+                </a>
+                <a class="coursePreview coursePreviewGreen" href="register.html" aria-label="Register to start Programming">
+                    <span class="courseNumber">02</span>
+                    <h3>Programming</h3>
+                    <p>Learn to plan, code, debug, and turn ideas into useful programs.</p>
+                    <span class="coursePreviewAction">Start learning</span>
+                </a>
+                <a class="coursePreview coursePreviewOrange" href="register.html" aria-label="Register to start Web Development">
+                    <span class="courseNumber">03</span>
+                    <h3>Web Development</h3>
+                    <p>Build accessible webpages with HTML, CSS, and JavaScript.</p>
+                    <span class="coursePreviewAction">Start learning</span>
+                </a>
+                <a class="coursePreview coursePreviewPink" href="register.html" aria-label="Register to start Python">
+                    <span class="courseNumber">04</span>
+                    <h3>Python</h3>
+                    <p>Use Python to solve everyday problems with data, calculations, and automation.</p>
+                    <span class="coursePreviewAction">Start learning</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="communityProjects" aria-labelledby="communityProjectsTitle">
+            <p class="sectionLabel">Build with what you have</p>
+            <h2 id="communityProjectsTitle">Try a local project</h2>
+            <p>Explore a question from everyday life. These activities need no internet and can be done with simple materials.</p>
+
+            <div class="communityProjectGrid">
+                <details class="communityProject">
+                    <summary>
+                        <span class="projectTheme">Water</span>
+                        <strong>Map water use</strong>
+                    </summary>
+                    <div class="communityProjectBody">
+                        <p><strong>Gather:</strong> paper and a pencil.</p>
+                        <ol>
+                            <li>With permission, notice different ways water is used at home or school.</li>
+                            <li>Make a tally chart without writing anyone's name or private routine.</li>
+                            <li>Draw a bar chart and suggest one way to avoid wasting water.</li>
+                        </ol>
+                        <p class="projectSafety">Do not drink or handle water you are unsure is safe.</p>
+                    </div>
+                </details>
+
+                <details class="communityProject">
+                    <summary>
+                        <span class="projectTheme">Farming</span>
+                        <strong>Compare seed growth</strong>
+                    </summary>
+                    <div class="communityProjectBody">
+                        <p><strong>Gather:</strong> two reused cups, soil, a few familiar seeds, and water.</p>
+                        <ol>
+                            <li>Ask an adult before collecting soil or seeds.</li>
+                            <li>Plant seeds in both cups; place one in sunlight and one in shade.</li>
+                            <li>Give them equal water and record changes each day for a week.</li>
+                        </ol>
+                        <p class="projectSafety">Wash your hands after handling soil. Do not eat the seeds or plants.</p>
+                    </div>
+                </details>
+
+                <details class="communityProject">
+                    <summary>
+                        <span class="projectTheme">Health</span>
+                        <strong>Make a handwashing guide</strong>
+                    </summary>
+                    <div class="communityProjectBody">
+                        <p><strong>Gather:</strong> paper, pencils, and advice from a trusted local health worker or adult.</p>
+                        <ol>
+                            <li>Ask what clear steps help people wash their hands well.</li>
+                            <li>Draw one step per panel using simple words or pictures.</li>
+                            <li>Ask a few classmates whether the guide is easy to understand, without collecting names.</li>
+                        </ol>
+                        <p class="projectSafety">Share general guidance only; do not diagnose illness or collect private health details.</p>
+                    </div>
+                </details>
+
+                <details class="communityProject">
+                    <summary>
+                        <span class="projectTheme">Weather</span>
+                        <strong>Keep a weather diary</strong>
+                    </summary>
+                    <div class="communityProjectBody">
+                        <p><strong>Gather:</strong> paper and a pencil; a thermometer is optional.</p>
+                        <ol>
+                            <li>For seven days, observe clouds, rain, or temperature at the same time each day.</li>
+                            <li>Record what you notice in a simple table.</li>
+                            <li>Look for patterns and draw a chart to share with your class.</li>
+                        </ol>
+                        <p class="projectSafety">Observe from a safe place. Go indoors during storms and never look directly at the sun.</p>
+                    </div>
+                </details>
+
+                <details class="communityProject">
+                    <summary>
+                        <span class="projectTheme">Energy</span>
+                        <strong>Find ways to save energy</strong>
+                    </summary>
+                    <div class="communityProjectBody">
+                        <p><strong>Gather:</strong> paper and a pencil.</p>
+                        <ol>
+                            <li>With permission, notice when a room uses daylight and when it uses electric light.</li>
+                            <li>Make a tally over a few days without touching switches or electrical equipment.</li>
+                            <li>Suggest one safe way your household or school could save energy.</li>
+                        </ol>
+                        <p class="projectSafety">Ask an adult before changing anything that uses electricity.</p>
+                    </div>
+                </details>
+            </div>
         </section>
 
         <section id="how-it-works">
@@ -124,12 +255,9 @@
         <h2>Contact StaTech</h2>
 
         <p>
-            Have a question about StaTech or our learning programmes?
-            We'd love to hear from you.
-        </p>
-
-        <p>
-            Email: <a href="mailto:info@statech.org">info@statech.org</a>
+            Contact StaTech by email:
+            <span id="contactEmailUnavailable">The public email address has not been set up yet.</span>
+            <a id="publicContactEmail" hidden></a>.
         </p>
 
         <p>
@@ -140,9 +268,18 @@
 
     </main>
 
-    <footer>
+    <footer class="siteFooter">
+        <div class="footerBrand">
+            <img src="statech-logo.svg" alt="">
+            <strong>StaTech</strong>
+        </div>
+        <p>Practical technology learning for curious girls.</p>
         <p>&copy; 2026 StaTech. All rights reserved.</p>
     </footer>
+
+    <script src="navigation.js"></script>
+    <script src="supportTicker.js"></script>
+    <script src="contact.js"></script>
 
 </body>
 </html>

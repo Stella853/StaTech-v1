@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StaTech Mentor Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skipLink" href="#mentorRegisterMain">Skip to main content</a>
+    <div id="sharedNavigation"></div>
+
+    <a class="authBrand registerBrand" href="index.html" aria-label="StaTech home">
+        <img src="statech-logo.svg" alt="">
+        <span>StaTech</span>
+    </a>
+
+    <main id="mentorRegisterMain" class="authLayout" role="main" tabindex="-1">
+        <div class="authCard registerCard">
+            <p class="authEyebrow">For approved school staff</p>
+            <h1>Mentor registration</h1>
+            <p class="mentorRegisterNotice">Staff accounts require an approved email address and a private invitation code from the StaTech administrator.</p>
+
+            <form id="mentorRegistrationForm" class="authForm">
+                <div class="fieldGroup">
+                    <label for="mentorName">Full name</label>
+                    <input id="mentorName" type="text" name="name" autocomplete="name" required>
+                </div>
+
+                <div class="fieldGroup">
+                    <label for="mentorEmail">Approved staff email</label>
+                    <input id="mentorEmail" type="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="fieldGroup">
+                    <label for="mentorPassword">Password</label>
+                    <input id="mentorPassword" type="password" name="password" autocomplete="new-password" minlength="12" required>
+                    <small>Use at least 12 characters.</small>
+                </div>
+
+                <div class="fieldGroup">
+                    <label for="mentorInviteCode">Private invitation code</label>
+                    <input id="mentorInviteCode" type="password" name="inviteCode" autocomplete="off" required>
+                </div>
+
+                <button id="mentorRegisterButton" class="authButton" type="submit">Create mentor account</button>
+                <p id="mentorRegisterStatus" class="authStatus" aria-live="polite"></p>
+            </form>
+
+            <p class="authLink">Already registered? <a href="login.html">Sign in</a></p>
+        </div>
+    </main>
+
+    <footer class="siteFooter authFooter">
+        <div class="footerBrand">
+            <img src="statech-logo.svg" alt="">
+            <strong>StaTech</strong>
+        </div>
+        <p>Practical technology learning for curious girls.</p>
+        <p>&copy; 2026 StaTech. All rights reserved.</p>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script src="mentor-register.js"></script>
+</body>
+</html>

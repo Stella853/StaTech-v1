@@ -8,29 +8,77 @@
 </head>
 
 <body>
+    <a class="skipLink" href="#registerContainer">Skip to main content</a>
 
-    <h1>Register for StaTech</h1>
+    <div id="sharedNavigation"></div>
 
-    <form id="registerForm">
+    <a class="authBrand registerBrand" href="index.html" aria-label="StaTech home">
+        <img src="statech-logo.svg" alt="">
+        <span>StaTech</span>
+    </a>
 
-        <input type="text" name="name" placeholder="Full name">
+    <div id="registerContainer" class="authLayout" role="main" tabindex="-1">
+        <div class="authCard registerCard">
+            <p class="authEyebrow">Create your account</p>
+            <h1>Register for StaTech</h1>
 
-        <input type="number" name="age" placeholder="Age">
+            <form id="registerForm" class="authForm">
+                <div class="fieldGroup">
+                    <label for="registerName">Full name</label>
+                    <input id="registerName" type="text" name="name" placeholder="Your full name" required>
+                </div>
 
-        <input type="text" name="gender" placeholder="Gender">
+                <div class="fieldRow">
+                    <div class="fieldGroup">
+                        <label for="registerAge">Age</label>
+                        <input id="registerAge" type="number" name="age" placeholder="Age" min="1" max="120" required>
+                    </div>
 
-        <input type="email" name="email" placeholder="Email">
+                    <div class="fieldGroup">
+                        <label for="registerGrade">Grade</label>
+                        <input id="registerGrade" type="number" name="grade" placeholder="Grade" min="1" max="12" required>
+                    </div>
+                </div>
 
-        <input type="password" name="password" placeholder="Password">
+                <div class="fieldGroup">
+                    <label for="registerGender">Gender</label>
+                    <input id="registerGender" type="text" name="gender" placeholder="Gender" required>
+                </div>
 
-        <input type="text" name="school" placeholder="School">
+                <div class="fieldGroup">
+                    <label for="registerSchool">School</label>
+                    <input id="registerSchool" type="text" name="school" placeholder="Your school" required>
+                </div>
 
-        <input type="number" name="grade" placeholder="Grade">
+                <div class="fieldGroup">
+                    <label for="registerEmail">Email</label>
+                    <input id="registerEmail" type="email" name="email" placeholder="Email address" required>
+                </div>
 
-        <button type="submit">Register</button>
+                <div class="fieldGroup">
+                    <label for="registerPassword">Password</label>
+                    <input id="registerPassword" type="password" name="password" placeholder="Create a password" required>
+                </div>
 
-    </form>
+                <button class="authButton" type="submit">Register</button>
+                <p id="registerStatus" class="authStatus" aria-live="polite"></p>
+            </form>
 
+            <p class="authLink">Already have an account? <a href="login.html">Login here</a></p>
+            <p class="authLink">Teacher or mentor? <a href="mentor-register.html">Staff registration</a></p>
+        </div>
+    </div>
+
+    <footer class="siteFooter authFooter">
+        <div class="footerBrand">
+            <img src="statech-logo.svg" alt="">
+            <strong>StaTech</strong>
+        </div>
+        <p>Practical technology learning for curious girls.</p>
+        <p>&copy; 2026 StaTech. All rights reserved.</p>
+    </footer>
+
+    <script src="navigation.js"></script>
     <script src="register.js"></script>
 
 </body>
